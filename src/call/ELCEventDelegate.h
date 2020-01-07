@@ -1,6 +1,6 @@
 /*
- * electra.h
- * Master include file for libelectra
+ * ELCEventDelegate.h
+ * Declares a protocol for event handler delegates
  * Created on 1/7/2020
  * Created by Andrew Davis
  *
@@ -21,7 +21,25 @@
  */
 
 //imports
-#import "args/ELCEventArgs.h"
-#import "call/ELCEventDelegate.h"
+#import <Foundation/Foundation.h>
+#import "../args/ELCEventArgs.h"
 
-//end of header
+/**
+ * Implemented by event handler objects
+ */
+@protocol ELCEventDelegate <NSObject>
+
+//required methods
+@required
+
+/**
+ * Handles an event
+ *
+ * @param args The arguments of the event
+ * @param sender The sender of the event
+ * @param receiver The receiver of the event
+ */
+- (void) handleEventWithArgs: (ELCEventArgs*) args
+		sender: (id) sender receiver: (id) receiver;
+
+@end //end of header
