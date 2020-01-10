@@ -23,5 +23,6 @@
 //imports
 #import "args/ELCEventArgs.h"
 #import "call/ELCEventDelegate.h"
+#import "event/ELCEvent.h"
 
 //end of header
