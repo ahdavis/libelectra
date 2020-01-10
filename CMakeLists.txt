@@ -86,17 +86,4 @@ else (DOXYGEN_FOUND)
 	message("Doxygen needs to be installed to generate documentation")
 endif (DOXYGEN_FOUND)
 
-# load the test source files
-file(GLOB_RECURSE TEST_SRCS ${CMAKE_SOURCE_DIR}/tests/*.m)
-file(GLOB_RECURSE TEST_HDRS ${CMAKE_SOURCE_DIR}/tests/*.h)
-
-# set their properties
-set_source_files_properties(${TEST_SRCS} PROPERTIES COMPILE_OPTIONS
-				-xobjective-c)
-
-# generate the test bundle
-add_library(electraTests MODULE ${TEST_SRCS} ${TEST_HDRS})
-set_target_properties(electraTests PROPERTIES BUNDLE TRUE)
-target_link_libraries(electraTests electra UnitKit)
-
 # end of file
