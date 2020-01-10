@@ -49,4 +49,9 @@
 	return argsCopy;
 }
 
+//empty class method - generates an empty instance
++ (ELCEventArgs*) empty {
+	return [[[ELCEventArgs alloc] init] autorelease];
+}
+
 @end //end of implementation

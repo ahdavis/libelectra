@@ -50,4 +50,11 @@
  */
 - (id) copyWithZone: (NSZone*) zone;
 
+/**
+ * Generates an empty ELCEventArgs instance
+ *
+ * @returns An autoreleased ELCEventArgs instance with no properties
+ */
++ (ELCEventArgs*) empty;
+
 @end //end of header
